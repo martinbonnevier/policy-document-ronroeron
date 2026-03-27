@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #b00149;
+      --panel: #800030;
+      --border: #d4175f;
+      --synth:   #00e5ff; --synth-d:  #002830; --synth-g:  rgba(0,229,255,.45);
+      --bass:    #ffd000; --bass-d:   #2e2400; --bass-g:   rgba(255,208,0,.45);
+      --drums:   #b8ff3c; --drums-d:  #1c2e00; --drums-g:  rgba(184,255,60,.45);
+      --fx:      #e040fb; --fx-d:     #1a0027; --fx-g:     rgba(224,64,251,.45);
+      --mix:     #ff9800; --mix-d:    #271600;
+      --txt: #f0a0be; --txt2: #f8cedd; --txt3: #ffffff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 39px,
+          rgba(0,0,0,0.08) 39px,
+          rgba(0,0,0,0.08) 40px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 39px,
+          rgba(0,0,0,0.08) 39px,
+          rgba(0,0,0,0.08) 40px
+        );
+      min-height: 100vh;
+      font-family: 'Share Tech Mono', monospace;
+      color: var(--txt);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px 80px;
+    }
+
+    /* Scanline overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 2px,
+        rgba(0,0,0,0.04) 2px,
+        rgba(0,0,0,0.04) 4px
+      );
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    .container {
+      max-width: 680px;
+      width: 100%;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 48px;
+      animation: fadeIn 0.8s ease both;
+    }
+
+    .logo-line {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      font-size: clamp(28px, 6vw, 48px);
+      color: var(--synth);
+      text-shadow:
+        0 0 10px var(--synth),
+        0 0 30px var(--synth-g),
+        0 0 60px rgba(0,229,255,0.2);
+      letter-spacing: 0.12em;
+      line-height: 1;
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { text-shadow: 0 0 10px var(--synth), 0 0 30px var(--synth-g), 0 0 60px rgba(0,229,255,0.2); }
+      50%       { text-shadow: 0 0 20px var(--synth), 0 0 50px var(--synth-g), 0 0 90px rgba(0,229,255,0.3); }
+    }
+
+    .subtitle {
+      margin-top: 10px;
+      font-size: 11px;
+      letter-spacing: 0.35em;
+      color: var(--txt);
+      opacity: 0.7;
+      text-transform: uppercase;
+    }
+
+    /* Decorative divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 24px 0;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border));
+    }
+    .divider::after {
+      background: linear-gradient(90deg, var(--border), transparent);
+    }
+    .divider span {
+      color: var(--fx);
+      font-size: 18px;
+    }
+
+    /* Panel card */
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 36px 40px;
+      position: relative;
+      animation: slideUp 0.6s cubic-bezier(0.16,1,0.3,1) both;
+    }
+
+    .panel::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--synth), var(--fx), var(--bass));
+    }
+
+    /* Corner accents */
+    .panel::after {
+      content: '';
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 20px; height: 20px;
+      border-bottom: 2px solid var(--synth);
+      border-right: 2px solid var(--synth);
+    }
+
+    .corner-tl {
+      position: absolute;
+      top: 0; left: 0;
+      width: 20px; height: 20px;
+      border-top: 2px solid var(--fx);
+      border-left: 2px solid var(--fx);
+      border-radius: 4px 0 0 0;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* Section label */
+    .section-label {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.4em;
+      color: var(--synth);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      opacity: 0.8;
+    }
+
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--txt2);
+      margin: 32px 0 10px;
+      padding-left: 12px;
+      border-left: 3px solid var(--bass);
+    }
+
+    h2:first-of-type { margin-top: 0; }
+
+    p {
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--txt);
+      margin-bottom: 14px;
+    }
+
+    .highlight {
+      color: var(--synth);
+      font-weight: bold;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--synth-d);
+      border: 1px solid var(--synth);
+      color: var(--synth);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      padding: 3px 10px;
+      border-radius: 2px;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+
+    .status-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--synth-d);
+      border: 1px solid rgba(0,229,255,0.3);
+      border-radius: 3px;
+      padding: 14px 18px;
+      margin: 20px 0;
+    }
+
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--drums);
+      box-shadow: 0 0 8px var(--drums);
+      flex-shrink: 0;
+      animation: blink 2s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+      0%,100% { opacity: 1; }
+      50%      { opacity: 0.3; }
+    }
+
+    .status-text {
+      font-size: 12px;
+      color: var(--synth);
+      letter-spacing: 0.05em;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 11px;
+      color: var(--txt);
+      opacity: 0.5;
+      letter-spacing: 0.15em;
+      animation: fadeIn 1.2s ease both;
+    }
+
+    @media (max-width: 500px) {
+      .panel { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-line">PRIVACY POLICY</div>
+      <div class="subtitle">Data &amp; Security Declaration</div>
+      <div class="divider"><span>◆</span></div>
+    </header>
+
+    <div class="panel">
+      <div class="corner-tl"></div>
+      <div class="section-label">// sys.privacy.cfg</div>
+      <span class="badge">✓ GDPR Compliant</span>
+
+      <div class="status-row">
+        <div class="dot"></div>
+        <div class="status-text">DATA COLLECTION STATUS: <strong>NONE</strong> — No data leaves your device.</div>
+      </div>
+
+      <h2>Overview</h2>
+      <p>
+        This app does <span class="highlight">not collect, store, transmit, or share</span> any personal data whatsoever. Everything you create stays entirely on your device.
+      </p>
+
+      <h2>Data Collection</h2>
+      <p>
+        We collect <span class="highlight">zero data</span>. There are no analytics, no tracking, no telemetry, no crash reporting, and no usage statistics of any kind. No information is ever sent from your device to any server.
+      </p>
+
+      <h2>Third Parties</h2>
+      <p>
+        This app contains no third-party SDKs, advertising networks, or data brokers. Your usage is entirely private.
+      </p>
+
+      <h2>Permissions</h2>
+      <p>
+        Any device permissions requested (such as audio) are used solely to provide the app's core functionality — synthesizing sound locally on your device. These permissions are never used to collect or transmit data.
+      </p>
+
+      <h2>Children's Privacy</h2>
+      <p>
+        Since no data is collected from anyone, this app is safe for all ages under COPPA, GDPR-K, and equivalent regulations.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Questions? Reach us at: <span class="highlight">martin@martinbonnevier.de</span>
+      </p>
+
+      <h2>Last Updated</h2>
+      <p>March 2026</p>
+    </div>
+
+    <footer>◆ &nbsp; NO DATA COLLECTED &nbsp; ◆ &nbsp; NO COOKIES &nbsp; ◆ &nbsp; NO TRACKING &nbsp; ◆</footer>
+  </div>
+</body>
+</html>
