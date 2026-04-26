@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Privacy Policy</title>
+  <title>Privacy Policy — Ronroeron</title>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -18,26 +17,12 @@
       --mix:     #ff9800; --mix-d:    #271600;
       --txt: #f0a0be; --txt2: #f8cedd; --txt3: #ffffff;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       background-color: var(--bg);
       background-image:
-        repeating-linear-gradient(
-          0deg,
-          transparent,
-          transparent 39px,
-          rgba(0,0,0,0.08) 39px,
-          rgba(0,0,0,0.08) 40px
-        ),
-        repeating-linear-gradient(
-          90deg,
-          transparent,
-          transparent 39px,
-          rgba(0,0,0,0.08) 39px,
-          rgba(0,0,0,0.08) 40px
-        );
+        repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(0,0,0,0.08) 39px, rgba(0,0,0,0.08) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(0,0,0,0.08) 39px, rgba(0,0,0,0.08) 40px);
       min-height: 100vh;
       font-family: 'Share Tech Mono', monospace;
       color: var(--txt);
@@ -46,85 +31,35 @@
       align-items: center;
       padding: 60px 20px 80px;
     }
-
-    /* Scanline overlay */
     body::after {
       content: '';
       position: fixed;
       inset: 0;
-      background: repeating-linear-gradient(
-        to bottom,
-        transparent 0px,
-        transparent 2px,
-        rgba(0,0,0,0.04) 2px,
-        rgba(0,0,0,0.04) 4px
-      );
+      background: repeating-linear-gradient(to bottom, transparent 0px, transparent 2px, rgba(0,0,0,0.04) 2px, rgba(0,0,0,0.04) 4px);
       pointer-events: none;
       z-index: 100;
     }
-
-    .container {
-      max-width: 680px;
-      width: 100%;
-    }
-
-    /* Header */
-    header {
-      text-align: center;
-      margin-bottom: 48px;
-      animation: fadeIn 0.8s ease both;
-    }
-
+    .container { max-width: 680px; width: 100%; }
+    header { text-align: center; margin-bottom: 48px; animation: fadeIn 0.8s ease both; }
     .logo-line {
       font-family: 'Orbitron', sans-serif;
       font-weight: 900;
       font-size: clamp(28px, 6vw, 48px);
       color: var(--synth);
-      text-shadow:
-        0 0 10px var(--synth),
-        0 0 30px var(--synth-g),
-        0 0 60px rgba(0,229,255,0.2);
+      text-shadow: 0 0 10px var(--synth), 0 0 30px var(--synth-g), 0 0 60px rgba(0,229,255,0.2);
       letter-spacing: 0.12em;
       line-height: 1;
       animation: pulse 3s ease-in-out infinite;
     }
-
     @keyframes pulse {
-      0%, 100% { text-shadow: 0 0 10px var(--synth), 0 0 30px var(--synth-g), 0 0 60px rgba(0,229,255,0.2); }
-      50%       { text-shadow: 0 0 20px var(--synth), 0 0 50px var(--synth-g), 0 0 90px rgba(0,229,255,0.3); }
+      0%,100% { text-shadow: 0 0 10px var(--synth), 0 0 30px var(--synth-g), 0 0 60px rgba(0,229,255,0.2); }
+      50%      { text-shadow: 0 0 20px var(--synth), 0 0 50px var(--synth-g), 0 0 90px rgba(0,229,255,0.3); }
     }
-
-    .subtitle {
-      margin-top: 10px;
-      font-size: 11px;
-      letter-spacing: 0.35em;
-      color: var(--txt);
-      opacity: 0.7;
-      text-transform: uppercase;
-    }
-
-    /* Decorative divider */
-    .divider {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 24px 0;
-    }
-    .divider::before, .divider::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--border));
-    }
-    .divider::after {
-      background: linear-gradient(90deg, var(--border), transparent);
-    }
-    .divider span {
-      color: var(--fx);
-      font-size: 18px;
-    }
-
-    /* Panel card */
+    .subtitle { margin-top: 10px; font-size: 11px; letter-spacing: 0.35em; color: var(--txt); opacity: 0.7; text-transform: uppercase; }
+    .divider { display: flex; align-items: center; gap: 12px; margin: 24px 0; }
+    .divider::before { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--border)); }
+    .divider::after  { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--border), transparent); }
+    .divider span { color: var(--fx); font-size: 18px; }
     .panel {
       background: var(--panel);
       border: 1px solid var(--border);
@@ -133,7 +68,6 @@
       position: relative;
       animation: slideUp 0.6s cubic-bezier(0.16,1,0.3,1) both;
     }
-
     .panel::before {
       content: '';
       position: absolute;
@@ -141,8 +75,6 @@
       height: 2px;
       background: linear-gradient(90deg, var(--synth), var(--fx), var(--bass));
     }
-
-    /* Corner accents */
     .panel::after {
       content: '';
       position: absolute;
@@ -151,7 +83,6 @@
       border-bottom: 2px solid var(--synth);
       border-right: 2px solid var(--synth);
     }
-
     .corner-tl {
       position: absolute;
       top: 0; left: 0;
@@ -160,18 +91,14 @@
       border-left: 2px solid var(--fx);
       border-radius: 4px 0 0 0;
     }
-
     @keyframes slideUp {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-
     @keyframes fadeIn {
       from { opacity: 0; }
       to   { opacity: 1; }
     }
-
-    /* Section label */
     .section-label {
       font-family: 'Orbitron', sans-serif;
       font-size: 10px;
@@ -181,7 +108,6 @@
       margin-bottom: 20px;
       opacity: 0.8;
     }
-
     h2 {
       font-family: 'Orbitron', sans-serif;
       font-size: 15px;
@@ -192,21 +118,11 @@
       padding-left: 12px;
       border-left: 3px solid var(--bass);
     }
-
     h2:first-of-type { margin-top: 0; }
-
-    p {
-      font-size: 14px;
-      line-height: 1.85;
-      color: var(--txt);
-      margin-bottom: 14px;
-    }
-
-    .highlight {
-      color: var(--synth);
-      font-weight: bold;
-    }
-
+    p { font-size: 14px; line-height: 1.85; color: var(--txt); margin-bottom: 14px; }
+    ul { margin: 0 0 14px 20px; }
+    ul li { font-size: 14px; line-height: 1.85; color: var(--txt); }
+    .highlight { color: var(--synth); font-weight: bold; }
     .badge {
       display: inline-block;
       background: var(--synth-d);
@@ -220,7 +136,6 @@
       margin-bottom: 24px;
       text-transform: uppercase;
     }
-
     .status-row {
       display: flex;
       align-items: center;
@@ -231,7 +146,6 @@
       padding: 14px 18px;
       margin: 20px 0;
     }
-
     .dot {
       width: 8px; height: 8px;
       border-radius: 50%;
@@ -240,18 +154,19 @@
       flex-shrink: 0;
       animation: blink 2s ease-in-out infinite;
     }
-
     @keyframes blink {
       0%,100% { opacity: 1; }
       50%      { opacity: 0.3; }
     }
-
-    .status-text {
-      font-size: 12px;
-      color: var(--synth);
-      letter-spacing: 0.05em;
+    .status-text { font-size: 12px; color: var(--synth); letter-spacing: 0.05em; }
+    .mic-box {
+      background: rgba(0,229,255,0.05);
+      border: 1px solid rgba(0,229,255,0.25);
+      border-radius: 3px;
+      padding: 14px 18px;
+      margin: 14px 0;
     }
-
+    .mic-box p { margin-bottom: 0; }
     footer {
       text-align: center;
       margin-top: 40px;
@@ -261,7 +176,6 @@
       letter-spacing: 0.15em;
       animation: fadeIn 1.2s ease both;
     }
-
     @media (max-width: 500px) {
       .panel { padding: 24px 20px; }
     }
@@ -271,7 +185,7 @@
   <div class="container">
     <header>
       <div class="logo-line">PRIVACY POLICY</div>
-      <div class="subtitle">Data &amp; Security Declaration</div>
+      <div class="subtitle">Ronroeron — Data &amp; Security Declaration</div>
       <div class="divider"><span>◆</span></div>
     </header>
 
@@ -287,7 +201,7 @@
 
       <h2>Overview</h2>
       <p>
-        This app does <span class="highlight">not collect, store, transmit, or share</span> any personal data whatsoever. Everything you create stays entirely on your device.
+        Ronroeron is a music creation app. It does <span class="highlight">not collect, store, transmit, or share</span> any personal data. Everything you create — patterns, recordings, samples — stays entirely on your device.
       </p>
 
       <h2>Data Collection</h2>
@@ -295,19 +209,39 @@
         We collect <span class="highlight">zero data</span>. There are no analytics, no tracking, no telemetry, no crash reporting, and no usage statistics of any kind. No information is ever sent from your device to any server.
       </p>
 
-      <h2>Third Parties</h2>
+      <h2>Microphone Access</h2>
       <p>
-        This app contains no third-party SDKs, advertising networks, or data brokers. Your usage is entirely private.
+        Ronroeron requests access to your device's microphone solely to enable its built-in sampling features:
+      </p>
+      <ul>
+        <li>Recording drum samples directly into the drum sequencer</li>
+        <li>Recording sounds into the synth and bass sampler, with automatic pitch detection</li>
+      </ul>
+      <div class="mic-box">
+        <p>All microphone recordings are processed and stored <span class="highlight">locally on your device only</span>. Audio data is never uploaded, streamed, or transmitted anywhere. The microphone is only active while you are actively recording inside the app.</p>
+      </div>
+      <p>
+        You can deny microphone permission at any time in your device settings. All other features of the app remain fully functional without it.
       </p>
 
-      <h2>Permissions</h2>
+      <h2>Storage</h2>
       <p>
-        Any device permissions requested (such as audio) are used solely to provide the app's core functionality — synthesizing sound locally on your device. These permissions are never used to collect or transmit data.
+        Patterns, settings, and samples you create are saved locally on your device using standard browser storage. This data never leaves your device and is deleted when you uninstall the app.
+      </p>
+
+      <h2>Third Parties</h2>
+      <p>
+        This app contains no third-party SDKs, advertising networks, analytics services, or data brokers. Your usage is entirely private.
       </p>
 
       <h2>Children's Privacy</h2>
       <p>
-        Since no data is collected from anyone, this app is safe for all ages under COPPA, GDPR-K, and equivalent regulations.
+        Since no data is collected from anyone, this app is safe for all ages under COPPA, GDPR-K, and equivalent regulations worldwide.
+      </p>
+
+      <h2>Changes to This Policy</h2>
+      <p>
+        If this policy changes, the updated version will be published at this URL. The date below will reflect when it was last revised.
       </p>
 
       <h2>Contact</h2>
@@ -316,7 +250,7 @@
       </p>
 
       <h2>Last Updated</h2>
-      <p>March 2026</p>
+      <p>April 2026</p>
     </div>
 
     <footer>◆ &nbsp; NO DATA COLLECTED &nbsp; ◆ &nbsp; NO COOKIES &nbsp; ◆ &nbsp; NO TRACKING &nbsp; ◆</footer>
